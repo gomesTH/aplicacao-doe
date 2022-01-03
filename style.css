@@ -1,0 +1,193 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+html, body { /* Aqui estou tirando as margens que vem padrão, nos navegadores */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+
+  /* Fonte */
+  font-family: 'Roboto', sans-serif;
+
+  background-color: #f9f9f9;
+}
+
+h1, h2 {
+  color: #000000cc;
+}
+
+/* TITULOS */
+header h1, main h2 {
+  margin-bottom: 70px;
+}
+
+
+
+.form h2 {
+  text-align: right;
+  color: #ffffffee;
+  
+  font-size: 18px;
+
+}
+
+main h2 span {
+  color: #ff4f4f;
+}
+
+
+/* ESTRUTURA */
+
+header, main, footer { /* Neste item, estou agrupando as tags, pos irei usar o "text-align" para todas, tornando assim o codigo menos verboso. */
+  text-align: center; /* Alinhamento ao centro */
+}
+
+
+/* ESPAÇAMENTOS */
+
+header, .form, main {
+  /* espaçamentos com margin */
+  margin: 0 auto 70px auto;
+  /*   top,right,btton,left */
+
+
+  /* Limites dos elementos na página*/
+  width: 90%;
+  max-width: 500px;
+}
+
+/* HEADER */
+header button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+
+  background-color: #ff4f4f;
+  color: white;
+
+  font-weight: bold;
+}
+
+.logo {
+  max-width: 120px;
+  margin: 70px 0;
+}
+
+header p {
+  font-size: 14px;
+}
+
+
+/* FORM */
+
+section.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 45px;
+  align-items: center;
+  border-radius: 6px;
+
+  background-color: #ff4f4f;
+  padding: 16px 64px;
+}
+
+form input, 
+form button {
+  width: 100%;
+
+  margin-bottom: 4px;
+
+  box-sizing: border-box; /* este item, serve para manter o conteudo dentro da box, respeitando os 100% */
+
+  padding: 8px 16px; /* O "padding" é uma boa opção para preenchimento */
+
+  border-radius: 4px;
+
+  border: 1px #ffffff88 solid;
+}
+
+form input {
+  background-color: transparent;
+}
+
+form input::placeholder {
+  color: #ffffffaa;
+}
+
+form button {
+  font-weight: bold;
+}
+
+/* MAIN */
+
+main .doadores {
+  display: grid; /* responsavel pela forma como seram apresentados os conteudeos na tela, neste caso estou usando o "grid" que é uma forma de mostrar o conteudo em colunas e linhas, semelhante a uma tabela no excel. */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Define a quantidade de colunas e largura delas. " Observação - Neste item, são aceitaveis as medidas em frações, estou usando "1fr" nas colunas, vc define que seu item/coluna seja flexivel, assim utilizando toda a area da pagina"  */
+}
+
+.sangue {
+  color: #ff4f4f;
+  font-weight: bold;
+  font-size: 15px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  
+}
+
+.sangue::before {
+  content: "";
+  background-color: #ff4f4f11;
+
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+
+  /* Fazendo a Gota */
+
+  border-radius: 50%;
+  border-top-right-radius: 0;
+
+  transform: rotate(-45deg);
+
+}
+
+.doadores {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+
+/* FOOTER */
+footer {
+  margin-top: auto;
+
+  padding: 16px;
+
+  border: 1px solid #eee;
+}
+
+/* funcionalidades do javascript */
+
+section.form {
+  transition: all 300ms;
+}
+
+section.form.hide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin-top: -70px;
+}
